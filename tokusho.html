@@ -3,48 +3,159 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>特定商取引法に基づく表記 | スマレジコネクター</title>
+<title>特定商取引法に基づく表記 | スマレジコネクター for スプレッドシート</title>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
 * { box-sizing: border-box; margin: 0; padding: 0; }
 body { font-family: 'DM Sans', 'Noto Sans JP', sans-serif; color: #1a1d2e; background: #fff; padding: 48px 24px; }
-.wrapper { max-width: 720px; margin: 0 auto; }
+.wrapper { max-width: 760px; margin: 0 auto; }
 .page-label { font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: #0084cf; margin-bottom: 8px; }
-.page-title { font-size: 26px; font-weight: 700; letter-spacing: -0.3px; margin-bottom: 32px; padding-bottom: 20px; border-bottom: 2px solid #0084cf; }
+.page-title { font-size: 26px; font-weight: 700; letter-spacing: -0.3px; margin-bottom: 8px; padding-bottom: 20px; border-bottom: 2px solid #0084cf; }
+.page-subtitle { font-size: 13px; color: #6b7280; margin-bottom: 32px; line-height: 1.6; padding-top: 12px; }
 table { width: 100%; border-collapse: collapse; font-size: 14px; }
 tr { border-bottom: 1px solid #e5e7eb; }
-th { width: 32%; text-align: left; padding: 16px 20px 16px 0; font-weight: 600; color: #374151; vertical-align: top; white-space: nowrap; }
-td { padding: 16px 0; color: #374151; line-height: 1.75; vertical-align: top; }
+tr:first-child { border-top: 1px solid #e5e7eb; }
+th { width: 28%; text-align: left; padding: 16px 12px; font-weight: 600; color: #374151; vertical-align: top; background: #f8f9fc; font-size: 13px; }
+td { padding: 16px 0 16px 16px; color: #374151; line-height: 1.8; vertical-align: top; font-size: 14px; }
+.sub { font-size: 13px; color: #6b7280; }
 .note { margin-top: 28px; background: #f8f9fc; border-left: 3px solid #0084cf; border-radius: 0 8px 8px 0; padding: 14px 16px; font-size: 13px; color: #6b7280; line-height: 1.7; }
 .site-footer { margin-top: 48px; border-top: 1px solid #e5e7eb; padding-top: 24px; text-align: center; font-size: 13px; color: #6b7280; }
 .site-footer a { color: #0084cf; text-decoration: none; margin: 0 10px; }
 .site-footer p { margin-top: 8px; font-size: 12px; color: #9ca3af; }
-@media (max-width: 480px) {
+@media (max-width: 540px) {
   table, thead, tbody, th, td, tr { display: block; }
-  th { padding-bottom: 4px; color: #0084cf; font-size: 12px; border-bottom: none; }
-  td { padding-top: 0; padding-bottom: 16px; }
+  th { width: 100%; padding: 10px 12px 4px; color: #0084cf; font-size: 12px; border-bottom: none; }
+  td { padding: 4px 12px 16px; }
 }
 </style>
 </head>
 <body>
 <div class="wrapper">
+
   <div class="page-label">Legal</div>
   <h1 class="page-title">特定商取引法に基づく表記</h1>
+  <p class="page-subtitle">本ページは、特定商取引法および割賦販売法に基づく商取引に関する開示情報を記載しています。</p>
+
   <table>
-    <tr><th>販売業者</th><td>CALM CB, INC.</td></tr>
-    <tr><th>代表者名</th><td>請求があれば遅滞なく開示いたします</td></tr>
-    <tr><th>所在地</th><td>請求があれば遅滞なく開示いたします</td></tr>
-    <tr><th>電話番号</th><td>請求があれば遅滞なく開示いたします</td></tr>
-    <tr><th>メールアドレス</th><td>calm.cb.inc@gmail.com</td></tr>
-    <tr><th>販売URL</th><td>https://sites.google.com/view/smaregi-connector</td></tr>
-    <tr><th>販売価格</th><td>各プランに記載の金額（税込）<br>Free：¥0／月、Lite：¥980／月、Standard：¥2,980／月<br>Pro：¥5,000／月、Pro50：¥24,000／月、Pro100：¥46,000／月<br>Enterprise：個別見積もり</td></tr>
-    <tr><th>支払方法</th><td>クレジットカード（Stripe経由）</td></tr>
-    <tr><th>支払時期</th><td>申込時に初回決済。以降は毎月同日に自動更新。</td></tr>
-    <tr><th>サービス提供時期</th><td>決済完了後、即時利用可能</td></tr>
-    <tr><th>返品・キャンセル</th><td>デジタルサービスの性質上、原則として返金はお受けしておりません。ただし、当社の瑕疵による障害が発生した場合はこの限りではありません。解約はいつでも可能で、解約後は次回更新日までご利用いただけます。</td></tr>
-    <tr><th>動作環境</th><td>Google Chrome 最新版 / Googleアカウント / スマレジ スタンダードプラン以上</td></tr>
+
+    <tr>
+      <th>販売業者（法人名）</th>
+      <td>CALM CB, INC.</td>
+    </tr>
+
+    <tr>
+      <th>運営責任者</th>
+      <td>請求があれば遅滞なく開示いたします</td>
+    </tr>
+
+    <tr>
+      <th>所在地</th>
+      <td>請求があれば遅滞なく開示いたします</td>
+    </tr>
+
+    <tr>
+      <th>電話番号</th>
+      <td>
+        請求があれば遅滞なく開示いたします<br>
+        <span class="sub">※ まずメールにてお問い合わせください。必要に応じて開示いたします。</span>
+      </td>
+    </tr>
+
+    <tr>
+      <th>メールアドレス</th>
+      <td>
+        calm.cb.inc@gmail.com<br>
+        <span class="sub">対応時間：平日 10:00〜18:00（土日祝を除く）<br>通常3営業日以内にご返信いたします。</span>
+      </td>
+    </tr>
+
+    <tr>
+      <th>販売価格</th>
+      <td>
+        以下のプランよりお選びいただけます（すべて税込）：<br>
+        ・Free：¥0 / 月（1店舗まで）<br>
+        ・Lite：¥980 / 月（1店舗まで）<br>
+        ・Standard：¥2,980 / 月（1店舗まで）<br>
+        ・Pro：¥5,000 / 月（2〜10店舗まで）<br>
+        ・Pro50：¥24,000 / 月（11〜50店舗まで）<br>
+        ・Pro100：¥46,000 / 月（51〜100店舗まで）<br>
+        ・Enterprise：個別見積もり（101店舗以上）
+      </td>
+    </tr>
+
+    <tr>
+      <th>追加手数料</th>
+      <td>
+        販売価格以外に追加手数料は発生しません。<br>
+        <span class="sub">※ クレジットカード決済手数料はお客様のご負担はありません。</span>
+      </td>
+    </tr>
+
+    <tr>
+      <th>支払方法</th>
+      <td>
+        クレジットカード（Visa・Mastercard・American Express・JCB）<br>
+        <span class="sub">※ Stripe を通じた決済となります。</span>
+      </td>
+    </tr>
+
+    <tr>
+      <th>決済期間・支払時期</th>
+      <td>
+        クレジットカード決済はお申込み時に即時処理されます。<br>
+        以降は毎月の契約開始日と同日に自動で決済されます。
+      </td>
+    </tr>
+
+    <tr>
+      <th>継続契約・自動更新</th>
+      <td>
+        本サービスの有料プランは<strong>月額の継続契約（サブスクリプション）</strong>です。<br>
+        ・契約期間：1ヶ月単位で自動更新（無期限）<br>
+        ・毎月の契約開始日に自動で翌月分が請求されます<br>
+        ・解約手続きを行わない限り契約は継続されます<br>
+        <span class="sub">
+          ※ 目安となる年間支払総額（参考）：<br>
+          　Lite ¥980/月 → 年間 ¥11,760<br>
+          　Standard ¥2,980/月 → 年間 ¥35,760<br>
+          　Pro ¥5,000/月 → 年間 ¥60,000<br>
+          　（いずれも税込・自動更新が継続した場合の目安）
+        </span>
+      </td>
+    </tr>
+
+    <tr>
+      <th>サービス提供時期</th>
+      <td>決済完了後、即時ご利用いただけます。</td>
+    </tr>
+
+    <tr>
+      <th>返品・キャンセルポリシー</th>
+      <td>
+        <strong>【通常のキャンセル・解約】</strong><br>
+        解約はいつでも可能です。解約後は次回更新日をもってサービスの利用が終了します。<br>
+        解約手続きは calm.cb.inc@gmail.com までメールにてお申し付けください。<br>
+        デジタルサービスの性質上、解約後の残存期間分の日割り返金はお受けしておりません。<br><br>
+        <strong>【当社起因の障害・不具合の場合】</strong><br>
+        当社の瑕疵に起因するサービス障害・不具合が発生した場合は、個別にご対応いたします。<br>
+        calm.cb.inc@gmail.com までご連絡ください。
+      </td>
+    </tr>
+
+    <tr>
+      <th>動作環境</th>
+      <td>
+        ・Google Chrome 最新版<br>
+        ・Googleアカウント（Googleスプレッドシートへのアクセス権）<br>
+        ・スマレジ スタンダードプラン以上のご契約
+      </td>
+    </tr>
+
   </table>
-  <div class="note">※ 代表者名・所在地・電話番号は、請求があれば遅滞なく開示いたします。お問い合わせは calm.cb.inc@gmail.com までご連絡ください。</div>
+
+  <div class="note">
+    ※ 運営責任者・所在地・電話番号の開示請求は、calm.cb.inc@gmail.com までメールにてご連絡ください。合理的な期間内に遅滞なく開示いたします。
+  </div>
 
   <footer class="site-footer">
     <div>
@@ -55,6 +166,7 @@ td { padding: 16px 0; color: #374151; line-height: 1.75; vertical-align: top; }
     </div>
     <p>© 2026 CALM CB, INC.</p>
   </footer>
+
 </div>
 </body>
 </html>
