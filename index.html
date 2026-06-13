@@ -25,6 +25,16 @@ body { font-family: 'DM Sans', 'Noto Sans JP', sans-serif; color: #1a1d2e; backg
 .feature-icon { font-size: 24px; margin-bottom: 12px; }
 .feature-card h3 { font-size: 14px; font-weight: 700; margin-bottom: 6px; }
 .feature-card p { font-size: 13px; color: #6b7280; line-height: 1.65; }
+.usecase { display: flex; flex-direction: column; gap: 32px; }
+.usecase-item { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; align-items: center; }
+.usecase-item.reverse .usecase-text { order: 2; }
+.usecase-num { display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; background: #0084cf; color: #fff; border-radius: 8px; font-size: 14px; font-weight: 700; margin-bottom: 10px; }
+.usecase-text h3 { font-size: 16px; font-weight: 700; margin-bottom: 8px; letter-spacing: -0.3px; }
+.usecase-text p { font-size: 14px; color: #6b7280; line-height: 1.75; }
+.usecase-video { background: #f8f9fc; border: 1.5px solid #e5e7eb; border-radius: 14px; aspect-ratio: 16 / 9; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; color: #9ca3af; overflow: hidden; }
+.usecase-video .play-icon { font-size: 30px; }
+.usecase-video span { font-size: 12px; font-weight: 500; }
+.usecase-video video, .usecase-video img { width: 100%; height: 100%; object-fit: cover; }
 .flow { display: flex; gap: 8px; align-items: flex-start; flex-wrap: wrap; }
 .flow-step { flex: 1; min-width: 140px; text-align: center; position: relative; padding: 0 8px; }
 .flow-step:not(:last-child)::after { content: '→'; position: absolute; right: -8px; top: 14px; color: #0084cf; font-size: 16px; }
@@ -80,6 +90,8 @@ body { font-family: 'DM Sans', 'Noto Sans JP', sans-serif; color: #1a1d2e; backg
 .site-footer p { margin-top: 8px; font-size: 12px; color: #9ca3af; }
 @media (max-width: 640px) {
   .features-grid, .requirements, .plans-grid { grid-template-columns: 1fr; }
+  .usecase-item { grid-template-columns: 1fr; gap: 14px; }
+  .usecase-item.reverse .usecase-text { order: 0; }
   .plans-grid-bottom { grid-template-columns: repeat(2, 1fr); }
   .flow-step:not(:last-child)::after { display: none; }
   .contact-card { flex-direction: column; }
@@ -89,10 +101,10 @@ body { font-family: 'DM Sans', 'Noto Sans JP', sans-serif; color: #1a1d2e; backg
 <body>
 
 <div class="hero">
-  <img src="icon.png" alt="スマレジコネクター" style="width:72px;height:72px;border-radius:16px;margin-bottom:18px;box-shadow:0 4px 16px rgba(0,0,0,0.2);">
+  <img src="icon.png" alt="スマレジコネクター" style="width:72px;height:72px;margin:0 auto 18px;display:block;">
   <div class="hero-label">Google Workspace アドオン</div>
-  <h1>スマレジの売上データを<br><em>スプレッドシート</em>へワンクリックで</h1>
-  <p>スマレジコネクター for スプレッドシートは、スマレジの取引データをGoogleスプレッドシートに自動で取り込む業務効率化ツールです。</p>
+  <h1>スマレジの売上データを<br>Google<em>スプレッドシート</em>へワンクリックで</h1>
+  <p>スマレジコネクター for スプレッドシートは、スマレジの各種データをGoogleスプレッドシートに書き出し、Googleスプレッドシートからスマレジに書き込む業務効率化ツールです。</p>
 </div>
 
 <div class="section">
@@ -114,6 +126,40 @@ body { font-family: 'DM Sans', 'Noto Sans JP', sans-serif; color: #1a1d2e; backg
   <div class="section-desc">Googleスプレッドシートのサイドバーから簡単に操作できます。</div>
   <div style="text-align:center; background:#f8f9fc; border:1.5px solid #e5e7eb; border-radius:14px; padding:24px; overflow:hidden;">
     <img src="Animation.gif" alt="スマレジコネクター 動作デモ" style="max-width:100%; height:auto; border-radius:8px; box-shadow:0 4px 20px rgba(0,0,0,0.1);">
+  </div>
+</div>
+
+<hr class="divider">
+
+<div class="section">
+  <div class="section-label">Use Cases</div>
+  <div class="section-title">便利な活用方法</div>
+  <div class="section-desc">CSVアップロードではできない操作も、スプレッドシートから一括で。</div>
+  <div class="usecase">
+    <div class="usecase-item">
+      <div class="usecase-text">
+        <div class="usecase-num">1</div>
+        <h3>親部門を一括登録</h3>
+        <p>部門CSVアップロード機能では登録できない親部門登録を、スプレッドシートから一括登録・更新できます。</p>
+      </div>
+      <!-- 動画は後日アップロード予定。<video src="usecase1.mp4"> に差し替え -->
+      <div class="usecase-video">
+        <div class="play-icon">▶</div>
+        <span>動画は準備中です</span>
+      </div>
+    </div>
+    <div class="usecase-item reverse">
+      <div class="usecase-text">
+        <div class="usecase-num">2</div>
+        <h3>店舗別の価格を一括登録</h3>
+        <p>CSVアップロードでは登録できない価格詳細（店舗別価格）を、スプレッドシートから一括登録できます。</p>
+      </div>
+      <!-- 動画は後日アップロード予定。<video src="usecase2.mp4"> に差し替え -->
+      <div class="usecase-video">
+        <div class="play-icon">▶</div>
+        <span>動画は準備中です</span>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -153,40 +199,40 @@ body { font-family: 'DM Sans', 'Noto Sans JP', sans-serif; color: #1a1d2e; backg
     <div class="plan-card">
       <div class="plan-name">Free</div><div class="plan-price">¥0<span> /月</span></div>
       <div class="plan-stores">1店舗まで</div><div class="plan-comment">まずは無料でお試し</div>
-      <ul class="plan-features"><li><span class="icon limit">!</span>月10回まで実行可能</li><li><span class="icon limit">!</span>1回あたり100行まで入出力（登録系は10行）</li><li><span class="icon limit">!</span>定期実行 非対応</li></ul>
+      <ul class="plan-features"><li><span class="icon limit">!</span>月10回まで実行可能</li><li><span class="icon limit">!</span>1回あたり100行まで入出力（登録系は10行）</li></ul>
     </div>
     <div class="plan-card">
       <div class="plan-name">Lite</div><div class="plan-price">¥980<span> /月</span></div>
       <div class="plan-stores">1店舗まで</div><div class="plan-comment">日次・週次の定期確認に最適</div>
-      <ul class="plan-features"><li><span class="icon limit">!</span>月50回まで実行可能</li><li><span class="icon">✓</span>入出力行数 無制限</li><li><span class="icon">✓</span>定期実行（自動更新）</li></ul>
+      <ul class="plan-features"><li><span class="icon limit">!</span>月50回まで実行可能</li><li><span class="icon">✓</span>入出力行数 無制限</li></ul>
     </div>
     <div class="plan-card featured">
       <div class="badge">おすすめ</div>
       <div class="plan-name">Standard</div><div class="plan-price">¥2,980<span> /月</span></div>
       <div class="plan-stores">1店舗まで</div><div class="plan-comment">月次レポート・分析に最適</div>
-      <ul class="plan-features"><li><span class="icon">✓</span>実行回数 無制限</li><li><span class="icon">✓</span>入出力行数 無制限</li><li><span class="icon">✓</span>定期実行（自動更新）</li></ul>
+      <ul class="plan-features"><li><span class="icon">✓</span>実行回数 無制限</li><li><span class="icon">✓</span>入出力行数 無制限</li></ul>
     </div>
   </div>
   <div class="plans-grid-bottom">
     <div class="plan-card">
       <div class="plan-name">Pro</div><div class="plan-price">¥4,980<span> /月</span></div>
       <div class="plan-stores">2〜10店舗まで</div><div class="plan-comment">複数店舗を横断集計</div>
-      <ul class="plan-features"><li><span class="icon">✓</span>実行回数 無制限</li><li><span class="icon">✓</span>入出力行数 無制限</li><li><span class="icon">✓</span>定期実行（自動更新）</li></ul>
+      <ul class="plan-features"><li><span class="icon">✓</span>実行回数 無制限</li><li><span class="icon">✓</span>入出力行数 無制限</li></ul>
     </div>
     <div class="plan-card">
       <div class="plan-name">Pro 50</div><div class="plan-price">¥29,800<span> /月</span></div>
       <div class="plan-stores">11〜50店舗まで</div><div class="plan-comment">中規模チェーン向け</div>
-      <ul class="plan-features"><li><span class="icon">✓</span>実行回数 無制限</li><li><span class="icon">✓</span>入出力行数 無制限</li><li><span class="icon">✓</span>定期実行（自動更新）</li></ul>
+      <ul class="plan-features"><li><span class="icon">✓</span>実行回数 無制限</li><li><span class="icon">✓</span>入出力行数 無制限</li></ul>
     </div>
     <div class="plan-card">
       <div class="plan-name">Pro 100</div><div class="plan-price">¥49,800<span> /月</span></div>
       <div class="plan-stores">51〜100店舗まで</div><div class="plan-comment">大規模チェーン向け</div>
-      <ul class="plan-features"><li><span class="icon">✓</span>実行回数 無制限</li><li><span class="icon">✓</span>入出力行数 無制限</li><li><span class="icon">✓</span>定期実行（自動更新）</li></ul>
+      <ul class="plan-features"><li><span class="icon">✓</span>実行回数 無制限</li><li><span class="icon">✓</span>入出力行数 無制限</li></ul>
     </div>
     <div class="plan-card enterprise">
       <div class="plan-name">Enterprise</div><div class="plan-price">個別見積もり</div>
       <div class="plan-stores">101店舗以上</div><div class="plan-comment">大規模・特殊要件はお問い合わせください</div>
-      <ul class="plan-features"><li><span class="icon">✓</span>実行回数 無制限</li><li><span class="icon">✓</span>入出力行数 無制限</li><li><span class="icon">✓</span>定期実行（自動更新）</li></ul>
+      <ul class="plan-features"><li><span class="icon">✓</span>実行回数 無制限</li><li><span class="icon">✓</span>入出力行数 無制限</li></ul>
     </div>
   </div>
   <p class="pricing-note">※ 料金はすべて税込表示です。スマレジのスタンダードプラン以上が別途必要です。店舗数に倉庫・休止店舗は含みません。<br>※ 請求は月末締めです。ご契約月は月末までの日割り金額が初回請求されます。翌月より毎月末日に満額が請求されます。</p>
@@ -215,11 +261,13 @@ body { font-family: 'DM Sans', 'Noto Sans JP', sans-serif; color: #1a1d2e; backg
 <div class="section">
   <div class="section-label">FAQ</div>
   <div class="section-title">よくあるご質問</div>
-  <div class="faq-item"><div class="faq-q">無料プランから有料プランへの変更はできますか？</div><div class="faq-a">はい、契約情報画面からいつでもアップグレードできます。（即時適用・当月日割り料金を即時請求）</div></div>
+  <div class="faq-item"><div class="faq-q">無料プランから有料プランへの変更はできますか？</div><div class="faq-a">はい、契約情報画面からいつでもアップグレードできます。（現プランの月末までの残額マイナスと新プランの月末までの利用料の差額を即時請求）</div></div>
   <div class="faq-item"><div class="faq-q">解約はいつでもできますか？</div><div class="faq-a">契約情報画面からいつでも解約可能です。解約後も次回更新日までは利用いただけます。</div></div>
   <div class="faq-item"><div class="faq-q">スマレジのどのプランに対応していますか？</div><div class="faq-a">スマレジのスタンダードプラン以上が対象です。</div></div>
-  <div class="faq-item"><div class="faq-q">データはどこに保存されますか？</div><div class="faq-a">取得したデータはお客様のGoogleスプレッドシートにのみ出力されます。スマレジコネクターのサーバーには販売データを保存しません。</div></div>
   <div class="faq-item"><div class="faq-q">APIキーの入力は必要ですか？</div><div class="faq-a">不要です。OAuth認証を使用しますので、スマレジアカウントと連携するだけでご利用いただけます。</div></div>
+  <div class="faq-item"><div class="faq-q">支払いは何に対応していますか？</div><div class="faq-a">クレジットカードです。</div></div>
+  <div class="faq-item"><div class="faq-q">非対応の機能のリクエストは可能ですか？</div><div class="faq-a">可能です。お問い合わせよりご要望ください。</div></div>
+  <div class="faq-item"><div class="faq-q">利用料の適格請求書（インボイス）の発行には対応していますか？</div><div class="faq-a">対応しておりません。</div></div>
 </div>
 
 <hr class="divider">
@@ -227,15 +275,7 @@ body { font-family: 'DM Sans', 'Noto Sans JP', sans-serif; color: #1a1d2e; backg
 <div class="section">
   <div class="section-label">Contact</div>
   <div class="section-title">お問い合わせ</div>
-  <div class="section-desc">ご質問・ご要望・不具合のご報告はメールにてお受けしています。</div>
-  <div class="contact-card">
-    <div class="contact-icon">📧</div>
-    <div class="contact-info">
-      <h3>メール</h3>
-      <a href="mailto:calm.cb.inc@gmail.com">calm.cb.inc@gmail.com</a>
-      <p>通常3営業日以内にご返信いたします</p>
-    </div>
-  </div>
+  <div class="section-desc">ご質問・ご要望・不具合のご報告は<a href="mailto:calm.cb.inc@gmail.com" style="color:#0084cf;font-weight:700;text-decoration:none;">メール</a>にてお受けしています。（通常3営業日以内にご返信いたします）</div>
 </div>
 
 <footer class="site-footer">
