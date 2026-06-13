@@ -28,8 +28,9 @@ body { font-family: 'DM Sans', 'Noto Sans JP', sans-serif; color: #1a1d2e; backg
 .usecase { display: flex; flex-direction: column; gap: 32px; }
 .usecase-item { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; align-items: center; }
 .usecase-item.reverse .usecase-text { order: 2; }
-.usecase-num { display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; background: #0084cf; color: #fff; border-radius: 8px; font-size: 14px; font-weight: 700; margin-bottom: 10px; }
-.usecase-text h3 { font-size: 16px; font-weight: 700; margin-bottom: 8px; letter-spacing: -0.3px; }
+.usecase-head { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
+.usecase-num { flex-shrink: 0; display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; background: #0084cf; color: #fff; border-radius: 8px; font-size: 14px; font-weight: 700; }
+.usecase-text h3 { font-size: 16px; font-weight: 700; letter-spacing: -0.3px; }
 .usecase-text p { font-size: 14px; color: #6b7280; line-height: 1.75; }
 .usecase-video { background: #f8f9fc; border: 1.5px solid #e5e7eb; border-radius: 14px; aspect-ratio: 16 / 9; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; color: #9ca3af; overflow: hidden; }
 .usecase-video .play-icon { font-size: 30px; }
@@ -138,8 +139,7 @@ body { font-family: 'DM Sans', 'Noto Sans JP', sans-serif; color: #1a1d2e; backg
   <div class="usecase">
     <div class="usecase-item">
       <div class="usecase-text">
-        <div class="usecase-num">1</div>
-        <h3>親部門を一括登録</h3>
+        <div class="usecase-head"><div class="usecase-num">1</div><h3>親部門を一括登録</h3></div>
         <p>部門CSVアップロード機能では登録できない親部門登録を、スプレッドシートから一括登録・更新できます。</p>
       </div>
       <!-- 動画は後日アップロード予定。<video src="usecase1.mp4"> に差し替え -->
@@ -150,8 +150,7 @@ body { font-family: 'DM Sans', 'Noto Sans JP', sans-serif; color: #1a1d2e; backg
     </div>
     <div class="usecase-item reverse">
       <div class="usecase-text">
-        <div class="usecase-num">2</div>
-        <h3>店舗別の価格を一括登録</h3>
+        <div class="usecase-head"><div class="usecase-num">2</div><h3>店舗別の価格を一括登録</h3></div>
         <p>CSVアップロードでは登録できない価格詳細（店舗別価格）を、スプレッドシートから一括登録できます。</p>
       </div>
       <!-- 動画は後日アップロード予定。<video src="usecase2.mp4"> に差し替え -->
