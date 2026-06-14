@@ -32,10 +32,15 @@ body { font-family: 'DM Sans', 'Noto Sans JP', sans-serif; color: #1a1d2e; backg
 .usecase-num { flex-shrink: 0; display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; background: #0084cf; color: #fff; border-radius: 8px; font-size: 14px; font-weight: 700; }
 .usecase-text h3 { font-size: 16px; font-weight: 700; letter-spacing: -0.3px; }
 .usecase-text p { font-size: 14px; color: #6b7280; line-height: 1.75; }
-.usecase-video { background: #f8f9fc; border: 1.5px solid #e5e7eb; border-radius: 14px; aspect-ratio: 16 / 9; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; color: #9ca3af; overflow: hidden; }
+.usecase-video { position: relative; background: #f8f9fc; border: 1.5px solid #e5e7eb; border-radius: 14px; aspect-ratio: 16 / 9; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; color: #9ca3af; overflow: hidden; cursor: pointer; }
 .usecase-video .play-icon { font-size: 30px; }
 .usecase-video span { font-size: 12px; font-weight: 500; }
-.usecase-video video, .usecase-video img { width: 100%; height: 100%; object-fit: cover; }
+.usecase-video video, .usecase-video img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
+.usecase-video .expand-hint { position: absolute; bottom: 10px; right: 10px; background: rgba(0,0,0,0.55); color: #fff; font-size: 11px; font-weight: 500; padding: 4px 9px; border-radius: 6px; display: flex; align-items: center; gap: 4px; pointer-events: none; }
+.video-modal { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.82); z-index: 1000; align-items: center; justify-content: center; padding: 24px; }
+.video-modal.open { display: flex; }
+.video-modal video { max-width: min(1100px, 95vw); max-height: 90vh; width: auto; height: auto; border-radius: 10px; box-shadow: 0 10px 40px rgba(0,0,0,0.5); }
+.video-modal-close { position: absolute; top: 16px; right: 22px; background: none; border: none; color: #fff; font-size: 34px; line-height: 1; cursor: pointer; }
 .flow { display: flex; gap: 8px; align-items: flex-start; flex-wrap: wrap; }
 .flow-step { flex: 1; min-width: 140px; text-align: center; position: relative; padding: 0 8px; }
 .flow-step:not(:last-child)::after { content: '→'; position: absolute; right: -8px; top: 14px; color: #0084cf; font-size: 16px; }
@@ -142,8 +147,9 @@ body { font-family: 'DM Sans', 'Noto Sans JP', sans-serif; color: #1a1d2e; backg
         <div class="usecase-head"><div class="usecase-num">1</div><h3>親部門を一括登録</h3></div>
         <p>部門CSVアップロード機能では登録できない親部門登録を、スプレッドシートから一括登録・更新できます。</p>
       </div>
-      <div class="usecase-video">
+      <div class="usecase-video" onclick="openVideoModal('usecase1.webm')">
         <video src="usecase1.webm" autoplay loop muted playsinline></video>
+        <span class="expand-hint">⤢ クリックで拡大</span>
       </div>
     </div>
     <div class="usecase-item reverse">
@@ -283,6 +289,23 @@ body { font-family: 'DM Sans', 'Noto Sans JP', sans-serif; color: #1a1d2e; backg
   </div>
   <p>© 2026 CALM CB, INC.</p>
 </footer>
+
+<div class="video-modal" id="videoModal" onclick="closeVideoModal(event)">
+  <button class="video-modal-close" aria-label="閉じる" onclick="closeVideoModal(event)">×</button>
+  <video id="modalVideo" controls autoplay loop playsinline></video>
+</div>
+<script>
+function openVideoModal(src){
+  var m=document.getElementById('videoModal'), v=document.getElementById('modalVideo');
+  v.src=src; m.classList.add('open'); v.play();
+}
+function closeVideoModal(e){
+  if(e && e.target && e.target.id==='modalVideo') return;
+  var m=document.getElementById('videoModal'), v=document.getElementById('modalVideo');
+  m.classList.remove('open'); v.pause(); v.removeAttribute('src'); v.load();
+}
+document.addEventListener('keydown',function(e){ if(e.key==='Escape') closeVideoModal(); });
+</script>
 
 </body>
 </html>
