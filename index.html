@@ -30,8 +30,7 @@ body { font-family: 'DM Sans', 'Noto Sans JP', sans-serif; color: #1a1d2e; backg
 .feature-card h3 { font-size: 14px; font-weight: 700; margin-bottom: 6px; }
 .feature-card p { font-size: 13px; color: #6b7280; line-height: 1.65; }
 .usecase { display: flex; flex-direction: column; gap: 32px; }
-.usecase-item { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; align-items: center; }
-.usecase-item.reverse .usecase-text { order: 2; }
+.usecase-item { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; align-items: start; }
 .usecase-head { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
 .usecase-num { flex-shrink: 0; display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; background: #0084cf; color: #fff; border-radius: 8px; font-size: 14px; font-weight: 700; }
 .usecase-text h3 { font-size: 16px; font-weight: 700; letter-spacing: -0.3px; }
@@ -113,7 +112,6 @@ body { font-family: 'DM Sans', 'Noto Sans JP', sans-serif; color: #1a1d2e; backg
 @media (max-width: 640px) {
   .features-grid, .requirements, .plans-grid { grid-template-columns: 1fr; }
   .usecase-item { grid-template-columns: 1fr; gap: 14px; }
-  .usecase-item.reverse .usecase-text { order: 0; }
   .plans-grid-bottom { grid-template-columns: repeat(2, 1fr); }
   .flow-step:not(:last-child)::after { display: none; }
   .contact-card { flex-direction: column; }
@@ -168,21 +166,31 @@ body { font-family: 'DM Sans', 'Noto Sans JP', sans-serif; color: #1a1d2e; backg
   <div class="usecase">
     <div class="usecase-item">
       <div class="usecase-text">
-        <div class="usecase-head"><div class="usecase-num">1</div><h3>親部門を一括登録</h3></div>
-        <p>部門CSVアップロード機能では登録できない親部門登録を、スプレッドシートから一括登録・更新できます。</p>
+        <div class="usecase-head"><div class="usecase-num">1</div><h3>データの自動取得</h3></div>
+        <p>毎日指定した時間に同じ条件で自動でデータ取得を行いシート更新します。</p>
       </div>
       <div class="usecase-video" onclick="openVideoModal('usecase1.webm')">
         <video src="usecase1.webm" autoplay loop muted playsinline></video>
         <span class="expand-hint">⤢ クリックで拡大</span>
       </div>
     </div>
-    <div class="usecase-item reverse">
+    <div class="usecase-item">
       <div class="usecase-text">
-        <div class="usecase-head"><div class="usecase-num">2</div><h3>店舗別の価格を一括登録</h3></div>
-        <p>CSVアップロードでは登録できない価格詳細（店舗別価格）を、スプレッドシートから一括登録できます。</p>
+        <div class="usecase-head"><div class="usecase-num">2</div><h3>親部門を一括登録</h3></div>
+        <p>部門CSVアップロード機能では登録できない親部門登録を、スプレッドシートから一括登録・更新できます。</p>
       </div>
       <div class="usecase-video" onclick="openVideoModal('usecase2.webm')">
         <video src="usecase2.webm" autoplay loop muted playsinline></video>
+        <span class="expand-hint">⤢ クリックで拡大</span>
+      </div>
+    </div>
+    <div class="usecase-item">
+      <div class="usecase-text">
+        <div class="usecase-head"><div class="usecase-num">3</div><h3>店舗別の価格を一括登録</h3></div>
+        <p>CSVアップロードでは登録できない価格詳細（店舗別価格）を、スプレッドシートから一括登録できます。</p>
+      </div>
+      <div class="usecase-video" onclick="openVideoModal('usecase3.webm')">
+        <video src="usecase3.webm" autoplay loop muted playsinline></video>
         <span class="expand-hint">⤢ クリックで拡大</span>
       </div>
     </div>
@@ -198,7 +206,7 @@ body { font-family: 'DM Sans', 'Noto Sans JP', sans-serif; color: #1a1d2e; backg
   <div class="flow">
     <div class="flow-step"><div class="flow-num">1</div><h4>アドオンをインストール</h4><p>Google Workspaceマーケットプレイスからインストール</p></div>
     <div class="flow-step"><div class="flow-num">2</div><h4>スマレジと連携</h4><p>サイドバーからスマレジアカウントでOAuth認証</p></div>
-    <div class="flow-step"><div class="flow-num">3</div><h4>データを取得</h4><p>期間・店舗を選んでボタンを押すだけで出力</p></div>
+    <div class="flow-step"><div class="flow-num">3</div><h4>データを取得</h4><p>取得条件を選んでボタンを押すだけでシートにデータ出力</p></div>
   </div>
 </div>
 
