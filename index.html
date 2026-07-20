@@ -98,17 +98,6 @@ body { font-family: 'DM Sans', 'Noto Sans JP', sans-serif; color: #1a1d2e; backg
 .footer-nav a { color: #9ca3af; text-decoration: none; font-size: 11px; letter-spacing: 0.2px; }
 .footer-nav a:hover { color: #6b7280; text-decoration: underline; }
 .site-footer p { font-size: 11px; color: #c4c8d0; }
-/* ハンバーガーメニュー */
-.menu-toggle { position: fixed; top: 14px; left: 14px; z-index: 1100; width: 40px; height: 40px; border-radius: 10px; background: rgba(255,255,255,0.92); border: 1px solid rgba(0,0,0,0.08); box-shadow: 0 2px 8px rgba(0,0,0,0.12); cursor: pointer; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; }
-.menu-toggle span { display: block; width: 18px; height: 2px; background: #1a1d2e; border-radius: 2px; }
-.menu-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.4); z-index: 1090; }
-.menu-overlay.open { display: block; }
-.menu-panel { position: fixed; top: 0; left: 0; width: 260px; max-width: 80vw; height: 100%; background: #fff; box-shadow: 2px 0 16px rgba(0,0,0,0.15); z-index: 1095; transform: translateX(-100%); transition: transform 0.25s ease; display: flex; flex-direction: column; padding: 20px 0; }
-.menu-panel.open { transform: translateX(0); }
-.menu-panel .menu-head { font-size: 12px; font-weight: 700; letter-spacing: 1px; color: #9ca3af; padding: 8px 24px 12px; text-transform: uppercase; }
-.menu-panel a, .menu-panel button { text-align: left; background: none; border: none; font-family: inherit; font-size: 15px; color: #1a1d2e; padding: 14px 24px; text-decoration: none; cursor: pointer; display: flex; align-items: center; gap: 10px; }
-.menu-panel a:hover, .menu-panel button:hover { background: #f3f4f6; }
-.menu-panel button.menu-close { color: #9ca3af; margin-top: auto; border-top: 1px solid #f0f0f0; }
 @media (max-width: 640px) {
   .features-grid, .requirements, .plans-grid { grid-template-columns: 1fr; }
   .usecase-item { grid-template-columns: 1fr; gap: 14px; }
@@ -119,14 +108,6 @@ body { font-family: 'DM Sans', 'Noto Sans JP', sans-serif; color: #1a1d2e; backg
 </style>
 </head>
 <body>
-
-<button class="menu-toggle" aria-label="メニューを開く" onclick="toggleMenu(true)"><span></span><span></span><span></span></button>
-<div class="menu-overlay" id="menuOverlay" onclick="toggleMenu(false)"></div>
-<nav class="menu-panel" id="menuPanel">
-  <div class="menu-head">メニュー</div>
-  <a href="/">🏠&nbsp;トップ</a>
-  <button type="button" class="menu-close" onclick="toggleMenu(false)">✕&nbsp;閉じる</button>
-</nav>
 
 <div class="hero">
   <img src="icon.png" alt="スマレジコネクター" style="width:72px;height:72px;margin:0 auto 18px;display:block;">
@@ -337,12 +318,6 @@ function closeVideoModal(e){
   m.classList.remove('open'); v.pause(); v.removeAttribute('src'); v.load();
 }
 document.addEventListener('keydown',function(e){ if(e.key==='Escape') closeVideoModal(); });
-function toggleMenu(open){
-  var p=document.getElementById('menuPanel'), o=document.getElementById('menuOverlay');
-  if(open){ p.classList.add('open'); o.classList.add('open'); }
-  else { p.classList.remove('open'); o.classList.remove('open'); }
-}
-document.addEventListener('keydown',function(e){ if(e.key==='Escape') toggleMenu(false); });
 </script>
 
 </body>
